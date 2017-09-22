@@ -2,8 +2,25 @@
 {% block title %} index {% endblock %} }
 {% block content %}
 {{time}}
-<h1> Hello, {{ user.username }} </h1>  
+<h1> Hello, {{ user }} </h1>  
+<table class = table table-bordered>
+	<tr>
+		<th>Title</th>
+		<th>ISBN</th>
+		<th>Author</th> 
+		<th>type</th>
+	</tr>
+	<tr>
+		{% for doc in docu%}
+
+		<td>{{doc.title}}</td>
+		<td>{{doc.ISBN}}</td>
+		<td>{{doc.author}}</td>
+		<td>{{doc.doc_type}}</td>
+	</tr>
+		{%endfor%}
+</table>
 {% endblock %}
 {% block content1 %}
-<p> Hello World {{user.username}} </p>
+<p> Hello World {{users.username}} </p>
 {% endblock %}

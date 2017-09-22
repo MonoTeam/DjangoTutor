@@ -16,5 +16,7 @@ class Document(models.Model):
     author = models.ForeignKey(Author)
     doc_type = models.IntegerField(choices=choice)
 
+    def __str__(self):
+        return "{} {}".format(self.title,self.ISBN)
 #admin
 #qwer1234

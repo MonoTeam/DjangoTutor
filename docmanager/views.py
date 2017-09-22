@@ -1,6 +1,7 @@
 from datetime import datetime
 from django.shortcuts import render
 from django.http import HttpResponse
+from docmanager.models import *
 # Create your views here.
 
 def test(request):
@@ -8,4 +9,6 @@ def test(request):
 
 def index(request):
     dt = datetime.now()
-    return render(request, "index.html", {'user': request.user, 'time': dt})
+    s = Author.objects.get(id=1)
+    doc = Document.objects.all()
+    return render(request, "index.html", {'user': s, 'time': dt,'users' : request.user,'docu' : doc})
